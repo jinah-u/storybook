@@ -4,21 +4,32 @@
     "paths": {
       "src/*": ["src/*"]
     },
-    "target": "es5",
+
+    "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
+
+    "strict": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "allowJs": true,
+    "skipLibCheck": true,
+
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    "jsx": "react-jsx",
+
+    "typeRoots": ["./@types", "./node_modules/@types"],
+
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+
+    "sourceMap": false
   },
-  "include": ["src"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
