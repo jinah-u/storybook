@@ -1,0 +1,3 @@
+[submodule "src/modules/submodule-component-test"]
+	path = src/modules/submodule-component-test
+	url = https://github.com/jinah-u/submodule-component-test.git

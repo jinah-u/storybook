@@ -1,6 +1,4 @@
-import './App.test';
-
-import React from 'react';
+import { BasicBtn } from 'modules/submodule-component-test/src/components';
 
 import logo from './logo.svg';
 
@@ -20,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <BasicBtn label={'버튼'} onClick={() => console.log('button')} />
     </div>
   );
 }
