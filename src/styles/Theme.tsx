@@ -1,66 +1,65 @@
 import { createTheme } from '@mui/material';
-import { EventUColorKey, eventUColor, eventUTransparent } from 'constants/colors';
-import { ReactComponent as CheckedIcon } from 'assets/icons/checkbox_filled_checked_icon.svg';
-import { ReactComponent as RadioCheckedIcon } from 'assets/icons/radio_checked_icon.svg';
+import { COLORS, TRANSPARENT } from 'constants/theme';
+import { ColorKey } from 'types/theme';
 /* mui theme style argumentation */
 declare module '@mui/material/styles' {
   /* Palette argumentation */
   interface Palette {
-    white: Palette['primary'];
-    black100: Palette['primary'];
-    black90: Palette['primary'];
-    black80: Palette['primary'];
-    black70: Palette['primary'];
-    black60: Palette['primary'];
-    black50: Palette['primary'];
-    black40: Palette['primary'];
-    black30: Palette['primary'];
-    black20: Palette['primary'];
-    black10: Palette['primary'];
-    black8: Palette['primary'];
-    black6: Palette['primary'];
-    black4: Palette['primary'];
-    black2: Palette['primary'];
-    red: Palette['primary'];
-    green: Palette['primary'];
-    blue: Palette['primary'];
-    brand5: Palette['primary'];
-    brand20: Palette['primary'];
-    brand40: Palette['primary'];
-    brand50: Palette['primary'];
-    brand70: Palette['primary'];
-    brandBlue: Palette['primary'];
-    brandYellow: Palette['primary'];
-    progressBar: Palette['primary'];
+    WHITE: Palette['primary'];
+    BLACK_100: Palette['primary'];
+    BLACK_90: Palette['primary'];
+    BLACK_80: Palette['primary'];
+    BLACK_70: Palette['primary'];
+    BLACK_60: Palette['primary'];
+    BLACK_50: Palette['primary'];
+    BLACK_40: Palette['primary'];
+    BLACK_30: Palette['primary'];
+    BLACK_20: Palette['primary'];
+    BLACK_10: Palette['primary'];
+    BLACK_8: Palette['primary'];
+    BLACK_6: Palette['primary'];
+    BLACK_4: Palette['primary'];
+    BLACK_2: Palette['primary'];
+    RED: Palette['primary'];
+    GREEN: Palette['primary'];
+    BLUE: Palette['primary'];
+    BRAND_5: Palette['primary'];
+    BRAND_20: Palette['primary'];
+    BRAND_40: Palette['primary'];
+    BRAND_50: Palette['primary'];
+    BRAND_70: Palette['primary'];
+    BRAND_BLUE: Palette['primary'];
+    BRAND_YELLOW: Palette['primary'];
+    PROGRESS_BAR: Palette['primary'];
   }
   /* color setup, PaletteOptions argumentation */
   interface PaletteOptions {
-    white?: PaletteOptions['primary'];
-    black100?: PaletteOptions['primary'];
-    black90?: PaletteOptions['primary'];
-    black80?: PaletteOptions['primary'];
-    black70?: PaletteOptions['primary'];
-    black60?: PaletteOptions['primary'];
-    black50?: PaletteOptions['primary'];
-    black40?: PaletteOptions['primary'];
-    black30?: PaletteOptions['primary'];
-    black20?: PaletteOptions['primary'];
-    black10?: PaletteOptions['primary'];
-    black8?: PaletteOptions['primary'];
-    black6?: PaletteOptions['primary'];
-    black4?: PaletteOptions['primary'];
-    black2?: PaletteOptions['primary'];
-    red?: PaletteOptions['primary'];
-    green?: PaletteOptions['primary'];
-    blue?: PaletteOptions['primary'];
-    brand5?: PaletteOptions['primary'];
-    brand20?: PaletteOptions['primary'];
-    brand40?: PaletteOptions['primary'];
-    brand50?: PaletteOptions['primary'];
-    brand70?: PaletteOptions['primary'];
-    brandBlue?: PaletteOptions['primary'];
-    brandYellow?: PaletteOptions['primary'];
-    progressBar?: PaletteOptions['primary'];
+    WHITE?: PaletteOptions['primary'];
+    BLACK_100?: PaletteOptions['primary'];
+    BLACK_90?: PaletteOptions['primary'];
+    BLACK_80?: PaletteOptions['primary'];
+    BLACK_70?: PaletteOptions['primary'];
+    BLACK_60?: PaletteOptions['primary'];
+    BLACK_50?: PaletteOptions['primary'];
+    BLACK_40?: PaletteOptions['primary'];
+    BLACK_30?: PaletteOptions['primary'];
+    BLACK_20?: PaletteOptions['primary'];
+    BLACK_10?: PaletteOptions['primary'];
+    BLACK_8?: PaletteOptions['primary'];
+    BLACK_6?: PaletteOptions['primary'];
+    BLACK_4?: PaletteOptions['primary'];
+    BLACK_2?: PaletteOptions['primary'];
+    RED?: PaletteOptions['primary'];
+    GREEN?: PaletteOptions['primary'];
+    BLUE?: PaletteOptions['primary'];
+    BRAND_5?: PaletteOptions['primary'];
+    BRAND_20?: PaletteOptions['primary'];
+    BRAND_40?: PaletteOptions['primary'];
+    BRAND_50?: PaletteOptions['primary'];
+    BRAND_70?: PaletteOptions['primary'];
+    BRAND_BLUE?: PaletteOptions['primary'];
+    BRAND_YELLOW?: PaletteOptions['primary'];
+    PROGRESS_BAR?: PaletteOptions['primary'];
   }
   /* TypographyVariants argumentation */
   interface TypographyVariants {
@@ -191,120 +190,122 @@ declare module '@mui/material/Typography' {
 }
 /* Mui Button 타입 argumentation */
 declare module '@mui/material/Button' {
-  interface ButtonPropsColorOverrides extends Record<EventUColorKey, true> {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface ButtonPropsColorOverrides extends Record<ColorKey, true> {}
 }
 /* Mui Progress argumentation */
 declare module '@mui/material/LinearProgress' {
-  interface LinearProgressPropsColorOverrides extends Record<EventUColorKey, true> {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface LinearProgressPropsColorOverrides extends Record<ColorKey, true> {}
 }
 
 const colorTheme = createTheme({
   // 색상 설정
   palette: {
-    white: {
-      main: eventUColor.white,
-      contrastText: eventUColor.black100,
+    WHITE: {
+      main: COLORS.WHITE,
+      contrastText: COLORS.BLACK_100,
     },
-    black100: {
-      main: eventUColor.black100,
-      contrastText: eventUColor.white,
+    BLACK_100: {
+      main: COLORS.BLACK_100,
+      contrastText: COLORS.WHITE,
     },
-    black90: {
-      main: eventUColor.black90,
-      contrastText: eventUColor.white,
+    BLACK_90: {
+      main: COLORS.BLACK_90,
+      contrastText: COLORS.WHITE,
     },
-    black80: {
-      main: eventUColor.black80,
-      contrastText: eventUColor.white,
+    BLACK_80: {
+      main: COLORS.BLACK_80,
+      contrastText: COLORS.WHITE,
     },
-    black70: {
-      main: eventUColor.black70,
-      contrastText: eventUColor.white,
+    BLACK_70: {
+      main: COLORS.BLACK_70,
+      contrastText: COLORS.WHITE,
     },
-    black60: {
-      main: eventUColor.black60,
-      contrastText: eventUColor.white,
+    BLACK_60: {
+      main: COLORS.BLACK_60,
+      contrastText: COLORS.WHITE,
     },
-    black50: {
-      main: eventUColor.black50,
-      contrastText: eventUColor.white,
+    BLACK_50: {
+      main: COLORS.BLACK_50,
+      contrastText: COLORS.WHITE,
     },
-    black40: {
-      main: eventUColor.black40,
-      contrastText: eventUColor.white,
+    BLACK_40: {
+      main: COLORS.BLACK_40,
+      contrastText: COLORS.WHITE,
     },
-    black30: {
-      main: eventUColor.black30,
-      contrastText: eventUColor.black100,
+    BLACK_30: {
+      main: COLORS.BLACK_30,
+      contrastText: COLORS.BLACK_100,
     },
-    black20: {
-      main: eventUColor.black20,
-      contrastText: eventUColor.black100,
+    BLACK_20: {
+      main: COLORS.BLACK_20,
+      contrastText: COLORS.BLACK_100,
     },
-    black10: {
-      main: eventUColor.black10,
-      contrastText: eventUColor.black100,
+    BLACK_10: {
+      main: COLORS.BLACK_10,
+      contrastText: COLORS.BLACK_100,
     },
-    black8: {
-      main: eventUColor.black8,
-      contrastText: eventUColor.black100,
+    BLACK_8: {
+      main: COLORS.BLACK_8,
+      contrastText: COLORS.BLACK_100,
     },
-    black6: {
-      main: eventUColor.black6,
-      contrastText: eventUColor.black100,
+    BLACK_6: {
+      main: COLORS.BLACK_6,
+      contrastText: COLORS.BLACK_100,
     },
-    black4: {
-      main: eventUColor.black4,
-      contrastText: eventUColor.black100,
+    BLACK_4: {
+      main: COLORS.BLACK_4,
+      contrastText: COLORS.BLACK_100,
     },
-    black2: {
-      main: eventUColor.black2,
-      contrastText: eventUColor.black100,
+    BLACK_2: {
+      main: COLORS.BLACK_2,
+      contrastText: COLORS.BLACK_100,
     },
-    red: {
-      main: eventUColor.red50,
-      contrastText: eventUColor.white,
+    RED: {
+      main: COLORS.RED_50,
+      contrastText: COLORS.WHITE,
     },
-    blue: {
-      main: eventUColor.blue50,
-      contrastText: eventUColor.white,
+    BLUE: {
+      main: COLORS.BLUE_50,
+      contrastText: COLORS.WHITE,
     },
-    green: {
-      main: eventUColor.green50,
-      contrastText: eventUColor.white,
+    GREEN: {
+      main: COLORS.GREEN_50,
+      contrastText: COLORS.WHITE,
     },
-    brand5: {
-      main: eventUColor.brand5,
-      contrastText: eventUColor.brand50,
+    BRAND_5: {
+      main: COLORS.BRAND_5,
+      contrastText: COLORS.BRAND_50,
     },
-    brand20: {
-      main: eventUColor.brand20,
-      contrastText: eventUColor.brand50,
+    BRAND_20: {
+      main: COLORS.BRAND_20,
+      contrastText: COLORS.BRAND_50,
     },
-    brand40: {
-      main: eventUColor.brand40,
-      contrastText: eventUColor.white,
+    BRAND_40: {
+      main: COLORS.BRAND_40,
+      contrastText: COLORS.WHITE,
     },
-    brand50: {
-      main: eventUColor.brand50,
-      dark: eventUColor.brand70,
-      contrastText: eventUColor.white,
+    BRAND_50: {
+      main: COLORS.BRAND_50,
+      dark: COLORS.BRAND_70,
+      contrastText: COLORS.WHITE,
     },
-    brand70: {
-      main: eventUColor.brand70,
-      contrastText: eventUColor.white,
+    BRAND_70: {
+      main: COLORS.BRAND_70,
+      contrastText: COLORS.WHITE,
     },
-    brandBlue: {
-      main: eventUColor.brandBlue,
-      contrastText: eventUColor.black100,
+    BRAND_BLUE: {
+      main: COLORS.BRAND_BLUE,
+      contrastText: COLORS.BLACK_100,
     },
-    brandYellow: {
-      main: eventUColor.brandYellow,
-      contrastText: eventUColor.black100,
+    BRAND_YELLOW: {
+      main: COLORS.BRAND_YELLOW,
+      contrastText: COLORS.BLACK_100,
     },
-    progressBar: {
-      main: eventUColor.progressBar,
-      contrastText: eventUColor.white,
+    PROGRESS_BAR: {
+      main: COLORS.PROGRESS_BAR,
+      contrastText: COLORS.WHITE,
     },
   },
 });
@@ -519,11 +520,11 @@ const typographyTheme = createTheme({
   },
 });
 /*
- * eventU 테마 설정
+ * 테마 설정
  * breakpoints: 화면분기점 설정
  * components: 컴포넌트 설정
  */
-const eventUTheme = createTheme(colorTheme, typographyTheme, {
+const Theme = createTheme(colorTheme, typographyTheme, {
   components: {
     // 버튼 컴포넌트 설정
     MuiButtonBase: {
@@ -552,24 +553,24 @@ const eventUTheme = createTheme(colorTheme, typographyTheme, {
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: colorTheme.palette.black6.main,
+          borderColor: colorTheme.palette.BLACK_6.main,
           margin: '32px 0',
         },
       },
     },
-    MuiCheckbox: {
-      defaultProps: {
-        checkedIcon: <CheckedIcon />,
-      },
-      styleOverrides: {
-        root: {
-          ':disabled': {
-            backgroundColor: colorTheme.palette.black10.main,
-          },
-          padding: '10px',
-        },
-      },
-    },
+    // MuiCheckbox: {
+    //   defaultProps: {
+    //     checkedIcon: <CheckedIcon />,
+    //   },
+    //   styleOverrides: {
+    //     root: {
+    //       ':disabled': {
+    //         backgroundColor: colorTheme.palette.BLACK_10.main,
+    //       },
+    //       padding: '10px',
+    //     },
+    //   },
+    // },
     // tooltip 컴포넌트 설정
     MuiTooltip: {
       defaultProps: {
@@ -596,26 +597,26 @@ const eventUTheme = createTheme(colorTheme, typographyTheme, {
     },
     // progress 컴포넌트 설정
     MuiLinearProgress: {
-      defaultProps: { color: 'brand50' },
+      defaultProps: { color: 'BRAND_50' },
       styleOverrides: {
         root: {
           height: '10px',
           borderRadius: '20px',
-          backgroundColor: colorTheme.palette.brand5.main,
+          backgroundColor: colorTheme.palette.BRAND_5.main,
         },
         bar: { borderRadius: '20px' },
         bar1Determinate: {
-          backgroundColor: eventUColor.progressBar,
+          backgroundColor: COLORS.PROGRESS_BAR,
         },
       },
     },
     // radio group 컴포넌트 설정
-    MuiRadio: {
-      defaultProps: {
-        color: 'brand50',
-        checkedIcon: <RadioCheckedIcon />,
-      },
-    },
+    // MuiRadio: {
+    //   defaultProps: {
+    //     color: 'BRAND_50',
+    //     checkedIcon: <RadioCheckedIcon />,
+    //   },
+    // },
     // radio group 컴포넌트 설정
     MuiRadioGroup: {
       styleOverrides: {
@@ -645,7 +646,7 @@ const eventUTheme = createTheme(colorTheme, typographyTheme, {
       styleOverrides: {
         title: {
           ...typographyTheme.typography.subHeadingB,
-          color: colorTheme.palette.white.main,
+          color: colorTheme.palette.WHITE.main,
         },
         root: { padding: 0 },
       },
@@ -699,7 +700,7 @@ const eventUTheme = createTheme(colorTheme, typographyTheme, {
           },
           borderRadius: '16px',
           width: '320px',
-          background: eventUTransparent.blackAlpha80,
+          background: TRANSPARENT.BLACK_ALPHA_80,
           padding: '12px',
           bottom: '20px !important',
         },
@@ -736,15 +737,15 @@ const eventUTheme = createTheme(colorTheme, typographyTheme, {
           lineHeight: '18px',
         },
         filld: {
-          color: colorTheme.palette.black70.main,
-          background: colorTheme.palette.black4.main,
+          color: colorTheme.palette.BLACK_70.main,
+          background: colorTheme.palette.BLACK_4.main,
           ':disabled': {
-            background: colorTheme.palette.black4.main,
+            background: colorTheme.palette.BLACK_4.main,
           },
         },
         outlined: {
-          color: colorTheme.palette.black70.main,
-          background: eventUColor.white,
+          color: colorTheme.palette.BLACK_70.main,
+          background: COLORS.WHITE,
         },
       },
     },
@@ -777,4 +778,4 @@ const eventUTheme = createTheme(colorTheme, typographyTheme, {
     },
   },
 });
-export default eventUTheme;
+export default Theme;

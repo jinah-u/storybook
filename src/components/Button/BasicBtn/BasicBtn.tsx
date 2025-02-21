@@ -212,11 +212,7 @@ const EventUBtn = ({
   buttontype = 'primaryFilled',
   ...props
 }: PropsWithChildren<EventUBtnProps>) => (
-  <BasicBtn
-    buttontype={buttontype}
-    variant={eventUBtnStyles[buttontype].variant}
-    color={eventUBtnStyles[buttontype].color}
-    {...props}>
+  <BasicBtn buttontype={buttontype} variant={eventUBtnStyles[buttontype].variant} {...props}>
     {children}
   </BasicBtn>
 );

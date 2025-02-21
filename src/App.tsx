@@ -1,5 +1,3 @@
-import { BasicBtn } from 'modules/submodule-component-test/src/components';
-
 import logo from './logo.svg';
 
 function App() {
@@ -18,7 +16,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <BasicBtn label={'버튼'} onClick={() => console.log('button')} />
     </div>
   );
 }

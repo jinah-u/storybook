@@ -1,4 +1,4 @@
-declare module Button {
+declare namespace Button {
   type EventUButtonType =
     | 'primaryFilled'
     | 'primaryFilled2'
